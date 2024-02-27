@@ -10,7 +10,7 @@ export class BillsController {
   constructor(private readonly billsService: BillsService) {}
 
   @UseGuards(AuthGuard('jwt'))
-  @Post('/create')
+  @Post()
   create(@Body() createBillDto: CreateBillDto, @GetUserById('id') userID: string){
     return this.billsService.create(createBillDto, userID);
   }
