@@ -1,7 +1,7 @@
 import * as bcrypt from 'bcrypt';
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { UsersService } from '../users/users.service'; // Import your UsersService
+import { UsersService } from '../users/users.service'; 
 
 @Injectable()
 export class AuthService {
@@ -13,7 +13,6 @@ export class AuthService {
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.usersService.findOneByUserName(username);
     if (user && bcrypt.compareSync(pass, user.password)) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { password, ...result } = user.toObject();
       return result;
     }
