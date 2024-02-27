@@ -1,5 +1,8 @@
 ## Create Bill
 @authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMyIsInVzZXJJZCI6IjY1ZDkzZDVhZjU3MDZhODc0OTNhZDQyZCIsImlhdCI6MTcwODk5NTcwOSwiZXhwIjoxNzA5MDI0NTA5fQ.FePzrA6Qp7fRlnD9HYqNA6_0mmYfoLaKJBaMRQqQ_6E"
+@billId = 65dd40692d85bac6bfd9fdf7
+
+### Create Bill
 POST http://localhost:8080/bills
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
@@ -13,3 +16,14 @@ Authorization: Bearer {{authToken}}
   "category": "Housing",
   "lastPaidDate": "2020-08-01"
 }
+
+### Get Bill by Id
+GET http://localhost:8080/bills/{{billId}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+### Update Bill
+PATCH http://localhost:8080/bills/{{billId}}
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
