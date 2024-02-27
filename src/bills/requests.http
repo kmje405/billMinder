@@ -1,0 +1,15 @@
+## Create Bill
+@authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMyIsInVzZXJJZCI6IjY1ZDkzZDVhZjU3MDZhODc0OTNhZDQyZCIsImlhdCI6MTcwODk5NTcwOSwiZXhwIjoxNzA5MDI0NTA5fQ.FePzrA6Qp7fRlnD9HYqNA6_0mmYfoLaKJBaMRQqQ_6E"
+POST http://localhost:8080/bills
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+  "merchant": "Mortgage",
+  "amount": 1000,
+  "dueDate": "2020-09-01",
+  "isPaid": false,
+  "isRecurring": true,
+  "category": "Housing",
+  "lastPaidDate": "2020-08-01"
+}
